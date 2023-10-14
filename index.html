@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Box Website</title>
+    <style>
+        body {
+            background-color: #FFB6C1; /* Romantic color: Light Pink */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #mystery-box {
+            width: 200px;
+            height: 200px;
+            background-image: url('m.png');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 1s;
+        }
+
+        #mystery-box:hover {
+            transform: scale(1.1);
+        }
+
+        #video-container {
+            display: none;
+        }
+
+        /* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+        @media (max-width: 768px) {
+            #video-container {
+                display: block;
+            }
+            #video {
+                width: 100%; /* Full width for mobile */
+                height: auto; /* Maintain aspect ratio */
+            }
+            #mystery-box {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mystery-box" onclick="revealVideo()">
+        
+    </div>
+
+    <div id="video-container">
+        <video controls id="video">
+            <source src="1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function revealVideo() {
+            document.getElementById("mystery-box").style.display = "none";
+            document.getElementById("video-container").style.display = "block";
+        }
+    </script>
+</body>
+</html>
